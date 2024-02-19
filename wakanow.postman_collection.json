@@ -1,0 +1,648 @@
+{
+	"info": {
+		"_postman_id": "a039358b-8638-4fd1-b29e-8f4f7e4ecebb",
+		"name": "wakanow",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30684603"
+	},
+	"item": [
+		{
+			"name": "Sign-up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"mcjovial2@email.com\",\n    \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/sign-up",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"sign-up"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"mcjovial@email.com\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/sign-up",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"sign-up"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-O/zF1M4EsSeqcgZOzAXUbc5OpUA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Feb 2024 14:02:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User created successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"mcjovial@email.com\",\n    \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"mcjovial@email.com\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "426"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1aa-vYV1ZaAfDm7LATGqcBpziEQd8vM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Feb 2024 14:19:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"65d0c01fc47da9848f2ce2b4\",\n        \"email\": \"mcjovial@email.com\",\n        \"password\": \"$2b$10$tYKQyA6gwheV.e8IWCQTUOp.vKJqaX3.81FU0C9KHxL4MTCBpV.6W\",\n        \"is_admin\": true,\n        \"temp_key\": \"046c620e5ca111e8e908d72d9d2f08139e2868d1\",\n        \"temp_key_expiry\": \"2024-02-24T14:18:07.037Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"65d0c082c47da9848f2ce2ba\",\n        \"email\": \"mcjovial2@email.com\",\n        \"password\": \"$2b$10$1jE1igBQBsYmM26TGWImL.X34NWXYbLF77ZNuAGpV4Y4ZLMIZklgK\",\n        \"is_admin\": false,\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Sign-in",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{oauth_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"mcjovial@email.com\",\n    \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/sign-in",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"sign-in"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"mcjovial@email.com\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/sign-in",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"sign-in"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "188"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"bc-H35ATS5qIqK0Esz+/EC2NeGh6gY\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Feb 2024 14:18:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWQwYzAxZmM0N2RhOTg0OGYyY2UyYjQiLCJpYXQiOjE3MDgxNzk1MDMsImV4cCI6MTcwODE4MzEwM30.9UhR3MVPO5v8b1KjSYSwoFO5OKMDh761jgQLXcUhjYM\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"mcjovial@email.com\",\n    \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/delete/65d0be6eddb3008f5baa4e28",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"delete",
+						"65d0be6eddb3008f5baa4e28"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"mcjovial@email.com\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/delete/65d0bc6941125285c07eeb59",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"delete",
+								"65d0bc6941125285c07eeb59"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-27o4zzUjhHNmthTJyia4gBCjpos\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Feb 2024 14:10:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User deleted successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Approve user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWQwYzAxZmM0N2RhOTg0OGYyY2UyYjQiLCJpYXQiOjE3MDgxNzk1MDMsImV4cCI6MTcwODE4MzEwM30.9UhR3MVPO5v8b1KjSYSwoFO5OKMDh761jgQLXcUhjYM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/approve/65d0c082c47da9848f2ce2ba",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"approve",
+						"65d0c082c47da9848f2ce2ba"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/approve/65d0c082c47da9848f2ce2ba",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"approve",
+								"65d0c082c47da9848f2ce2ba"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"28-HiIm2kzBH/aGOdo9JlB8psQX0M4\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Feb 2024 14:25:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User approved successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get pending",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWQwYzAxZmM0N2RhOTg0OGYyY2UyYjQiLCJpYXQiOjE3MDgxNzk1MDMsImV4cCI6MTcwODE4MzEwM30.9UhR3MVPO5v8b1KjSYSwoFO5OKMDh761jgQLXcUhjYM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/pending/",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"pending",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/pending/",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"pending",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "163"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a3-DOtRNeyHzzLiGz32tD6TpyE9K+c\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Feb 2024 14:23:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"65d0c082c47da9848f2ce2ba\",\n    \"email\": \"mcjovial2@email.com\",\n    \"password\": \"$2b$10$1jE1igBQBsYmM26TGWImL.X34NWXYbLF77ZNuAGpV4Y4ZLMIZklgK\",\n    \"is_admin\": false,\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Update details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWQwYzAxZmM0N2RhOTg0OGYyY2UyYjQiLCJpYXQiOjE3MDgxODAxNTIsImV4cCI6MTcwODE4Mzc1Mn0.ECX5WizRH5tSivzYPWCzxk8cryODeD1b3z3DkzqA2PM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"emmanuel\",\n    \"last_name\": \"elias\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/update/65d0c082c47da9848f2ce2ba",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"update",
+						"65d0c082c47da9848f2ce2ba"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"emmanuel\",\n    \"last_name\": \"elias\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/update/65d0c082c47da9848f2ce2ba",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"update",
+								"65d0c082c47da9848f2ce2ba"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "47"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2f-1A86yLWIxJ2OpfdJ8tQFjBOWSLQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 17 Feb 2024 14:32:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User details updated successfully\"\n}"
+				}
+			]
+		}
+	]
+}
